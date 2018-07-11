@@ -44,8 +44,8 @@ class Dog
       SELECT * FROM dogs WHERE id = ?
     SQL
     DB[:conn].execute(sql, id).map do |row|
-      Dog.new_from_db(id: row[0], name: row[1], breed: row[2])
-
+      Dog.new_from_db(row)
+    end
   end
 
 
