@@ -1,6 +1,6 @@
-class Dog 
+class Dog
 
-  attr_accessor :
+  attr_accessor 
 
 
 end
