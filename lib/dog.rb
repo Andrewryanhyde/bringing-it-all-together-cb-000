@@ -43,7 +43,8 @@ class Dog
     sql = <<-SQL
       SELECT * FROM dogs WHERE id = ?
     SQL
-    DB[:conn].execute(sql, id)
+    DB[:conn].execute(sql, id).map do |row|
+      Dog.new(id: row[0], name: row[1], breed: row[2])
   end
 
 
